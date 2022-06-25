@@ -113,6 +113,8 @@ function updateGame()
     {
         for(let y = 0; y < height; y++)
         {
+            //rules derived from https://en.wikipedia.org/wiki/Conway's_Game_of_Life
+
             //rule 1: Any live cell with two or three live neighbours survives.
             if((grid[x][y] == ALIVE) && ((countLivingNeighbours(x,y) == 2) || (countLivingNeighbours(x,y) == 3)))
             {
