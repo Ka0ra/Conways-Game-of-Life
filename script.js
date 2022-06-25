@@ -113,15 +113,16 @@ function updateGame()
     {
         for(let y = 0; y < height; y++)
         {
+            let living_neighbours = countLivingNeighbours(x,y);
             //rules derived from https://en.wikipedia.org/wiki/Conway's_Game_of_Life
 
             //rule 1: Any live cell with two or three live neighbours survives.
-            if((grid[x][y] == ALIVE) && ((countLivingNeighbours(x,y) == 2) || (countLivingNeighbours(x,y) == 3)))
+            if((grid[x][y] == ALIVE) && ((living_neighbours == 2) || (living_neighbours == 3)))
             {
                 next_grid[x][y] = ALIVE;
             }
             //rule 2: Any dead cell with three live neighbours becomes a live cell.
-            else if((grid[x][y] == DEAD) && (countLivingNeighbours(x,y) == 3))
+            else if((grid[x][y] == DEAD) && (living_neighbours == 3))
             {
                 next_grid[x][y] = ALIVE;
             }
