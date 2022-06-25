@@ -24,7 +24,7 @@ function createGrid()
     let new_grid = Array(width);
     for(let x = 0; x < width; x++)
     {
-        let col = Array(width);
+        let col = Array(height);
         for(let y = 0; y < height; y++)
         {
             col[y] = DEAD;
